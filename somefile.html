@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>     <!-- google jquery cdn -->
+
+<style>
+table, td {
+  border: 1px solid rgba(155, 147, 151, 0);
+  background-color : rgba(225, 225, 225, 0.937)
+}
+
+</style>
+</head>
+<body>
+
+<p>Click the button to change the content of the first table cell.</p>
+
+<table id="myTable" style="display:none;">
+  <tr>
+    <td>sunday</td>
+    <td>Row1 cell2</td>
+    <td> </td>
+    <td>Row1 cell4</td>
+  </tr>
+  <tr>
+    <td>sunday</td>
+    <td> </td>
+    <td>Row1 cell3</td>
+    <td> </td>
+  </tr>
+  <tr>
+    <td>Row3 cell1</td>
+    <td>Row3 cell2</td>
+    <td>Row1 cell3</td>
+    <td>Row1 cell2</td>
+  </tr>
+</table>
+<br> 
+
+<button onclick="myFunction()">Try it</button>
+
+<script>
+    
+
+$(document).ready(function () {
+   // $("#myTable").attr('style', 'display:block !important');
+    
+
+    var table = document.getElementById("myTable");
+
+
+    var x = table.rows[0].cells; // pura row
+    console.log(x);
+
+    x[2].innerHTML = table.rows[1].cells[2].innerHTML;
+
+    table.deleteRow(1);
+   
+    $("#myTable").attr('style', 'display:block !important');
+    
+
+});
+
+
+
+</script>
+
+</body>
+</html>
